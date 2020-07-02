@@ -3,6 +3,8 @@ package com.company.demo.controller;
 import com.company.demo.exception.RequestValidationError;
 import com.company.demo.service.IService;
 import com.company.demo.util.TransportDto;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -40,6 +42,21 @@ public class Controller {
             return ResponseEntity.status(res.getError().getHttpStatus()).body(res);
         }
         return ResponseEntity.ok(res.getResponse());
+    }
+
+    //hystrix sample
+    @GetMapping(value = "/hystrix")
+    @HystrixCommand(
+            fallbackMethod = "fallbackHystrix",
+            commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1000")
+    })
+    public String testHystrix() throws InterruptedException {
+        Thread.sleep(3000);
+        return "Welcome Hystrix";
+    }
+    private String fallbackHystrix() {
+        return "Request fails. It takes long time to response";
     }
 
 }
