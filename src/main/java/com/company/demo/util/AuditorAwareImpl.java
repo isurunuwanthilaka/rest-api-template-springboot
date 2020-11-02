@@ -8,10 +8,9 @@ public class AuditorAwareImpl implements AuditorAware<Integer> {
 
 
     public Optional<Integer> getCurrentAuditor() {
-        // Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        Optional<Integer> userId = Optional.of(100);
-        return userId;
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        extract user ID from JWT claims
+        return Optional.of(1);
     }
 
 }

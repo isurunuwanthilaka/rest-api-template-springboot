@@ -10,9 +10,6 @@ import java.security.NoSuchAlgorithmException;
 public class Md5Helper{
 
     public  String get(String pass) throws NoSuchAlgorithmException {
-        /**
-         * convert to md5 string
-         */
 
         MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(pass.getBytes());

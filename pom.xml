@@ -5,8 +5,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.4.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.3.4.RELEASE</version>
+        <relativePath/>
     </parent>
     <groupId>com.company</groupId>
     <artifactId>demo</artifactId>
@@ -17,10 +17,12 @@
 
     <properties>
         <java.version>11</java.version>
-        <swagger.version>2.9.2</swagger.version>
-        <lombok.version>1.18.8</lombok.version>
-        <model-mapper.version>2.3.4</model-mapper.version>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <swagger.version>3.0.0</swagger.version>
+        <lombok.version>1.18.16</lombok.version>
+        <model-mapper.version>2.3.8</model-mapper.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <hibernate-types-52.version>2.10.0</hibernate-types-52.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
     </properties>
 
     <dependencies>
@@ -28,6 +30,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-security</artifactId>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,10 +69,10 @@
             <artifactId>modelmapper</artifactId>
             <version>${model-mapper.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <!-- <optional>true</optional> -->
         </dependency>
 
         <dependency>
@@ -77,30 +89,15 @@
         <dependency>
             <groupId>com.vladmihalcea</groupId>
             <artifactId>hibernate-types-52</artifactId>
-            <version>2.9.7</version>
+            <version>${hibernate-types-52.version}</version>
         </dependency>
 
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
-            <version>2.0.0.Final</version>
+            <version>${validation-api.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-            <version>1.1.5.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>1.4.0.RELEASE</version>
-        </dependency>
 
     </dependencies>
 

@@ -5,15 +5,15 @@ import lombok.Getter;
 @Getter
 public enum ErrorMessage {
 
-  USER_UNAVAILABLE("user is unavailable.");
+  PING_FAILED("Ping failed.");
 
-  private String errorMessage;
+  private String message;
 
   ErrorMessage(String err) {
-    this.errorMessage = err;
+    this.message = err;
   }
 
   public String toString() {
-    return errorMessage;
+    return message;
   }
 }

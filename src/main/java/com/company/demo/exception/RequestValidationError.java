@@ -8,9 +8,6 @@ import java.util.List;
 @Getter
 public class RequestValidationError extends RuntimeException {
 
-    /**
-     * Request validation
-     */
     private static final long serialVersionUID = 1L;
 
     private List<FieldError> fieldErrors;

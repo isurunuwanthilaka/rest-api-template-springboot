@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 public class ApiError {
 
     private HttpStatus httpStatus;
-    @JsonIgnore
     private LocalDateTime timestamp;
     private String message;
     @JsonIgnore
