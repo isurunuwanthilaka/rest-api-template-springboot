@@ -1,27 +1,3 @@
-# REST-APIs-template for SpringBoot
+### Template v1.0.0
 
-## What is this?
-
-This is a template for RESTful microservice in springboot (Java)
-
-## What is the architecture?
-
-This is based on MVC pattern plus some components from N-Tier architectural pattern.
-
-## What are the configured features?
-
-* Auditable Model
-
-* Request Logging
-
-* Swagger Docs
-
-* Dockerfile for docker image build script
-
-* Docker Composer script for spinning docker containers 
-
-* Spring profiling
-
-* Exception handling
-
-* Database layer
+This is the template for Spring Boot RESTful Microservice
